@@ -36,7 +36,7 @@ public class PDF {
 	PagesObject pagesObj = new PagesObject(this);
 
 	/** The Font Dictionary */
-	FontDict fontDict = new FontDict(this);
+	PDFFont fontDict = new PDFFont(this);
 
 	/** The object number of the current object */
 	protected int currObj = 1;
@@ -234,17 +234,6 @@ public class PDF {
 			dict.put("Type", "/Pages");
 			dict.put("Count", "1");
 			dict.put("Kids", "[5 0 R]");
-		}
-	}
-
-	class FontDict extends PDFDict {
-		protected FontDict(PDF m) {
-			super(m);
-			dict.put("Type", "/Font");
-			dict.put("Subtype", "/Type1");
-			dict.put("Name", "/F1");
-			dict.put("BaseFont", "/Helvetica");
-			dict.put("Encoding", "/MacRomanEncoding");
 		}
 	}
 }

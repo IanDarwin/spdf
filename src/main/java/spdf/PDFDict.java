@@ -10,11 +10,10 @@ public abstract class PDFDict extends PDFObject {
 	 * leading slash, since they always have it. Values can
 	 * be /names, (strings), or whatever.
 	 */
-	protected Map<String,String> dict;
+	protected Map<String,String> dict = new HashMap<>();
 
 	PDFDict(PDF m) {
 		super(m);
-		dict = new HashMap<String,String>();
 	}
 
 	/** Write the object to the Output Writer. The default implementation

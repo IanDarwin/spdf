@@ -42,7 +42,7 @@ public class Page extends PDFDict {
 				((Text)po).print(sb);
 			else if (po instanceof MoveTo)
 				((MoveTo)po).print(sb);
-			// else if (po instanceof Font)
+			// else if (po instanceof PDFFont)
 			//	...
 			else
 				System.err.println("PDFPage: ignoring " + po);
