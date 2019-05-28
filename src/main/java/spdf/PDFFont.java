@@ -28,11 +28,4 @@ public class PDFFont extends PDFDict {
 	public String getBaseName() {
 		return baseName;
 	}
-
-	@Override
-	protected void print() {
-		// TODO Auto-generated method stub
-
-	}
-
 }
