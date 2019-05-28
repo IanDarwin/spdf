@@ -2,7 +2,7 @@ package spdf;
 
 import java.util.*;
 
-/** A PDFDict ias a PDFObject that is all, or mostly, a Dictionary.
+/** A PDFDict is a PDFObject that is all, or mostly, a Dictionary.
  * @author Ian Darwin, http://www.darwinsys.com/
  */
 public abstract class PDFDict extends PDFObject {
@@ -10,11 +10,11 @@ public abstract class PDFDict extends PDFObject {
 	 * leading slash, since they always have it. Values can
 	 * be /names, (strings), or whatever.
 	 */
-	protected Hashtable<String,String> dict;
+	protected Map<String,String> dict;
 
 	PDFDict(PDF m) {
 		super(m);
-		dict = new Hashtable<String,String>();
+		dict = new HashMap<String,String>();
 	}
 
 	/** Write the object to the Output Writer. The default implementation
@@ -42,13 +42,12 @@ public abstract class PDFDict extends PDFObject {
 
 	protected void printDict() {
 		master.println("<<");
-		Enumeration<String> enumeration = dict.keys();
-		while (enumeration.hasMoreElements()) {
+		for (String k : dict.keySet()) {
+			String v = dict.get(k);
 			master.print("\t/");
-			String key = (String)enumeration.nextElement();
-			master.print(key);
+			master.print(k);
 			master.print(" ");
-			master.print(dict.get(key));
+			master.print(v);
 			master.println();
 		}
 		master.println(">>");
