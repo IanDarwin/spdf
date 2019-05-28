@@ -21,7 +21,7 @@ public class Demo {
 		p1.add(new MoveTo(p, 100, 600));
 		p1.add(new Text(p, "Hello world, live on the web."));
 		p1.add(new Text(p, "Hello world, line 2 on the web."));
-		p.add(p1);
+		p.addPage(p1);
 		p.setAuthor("Ian F. Darwin");
 		p.writePDF();
 	}

@@ -53,11 +53,10 @@ public class PDF {
 
 		pages = new ArrayList<Page>();
 		xrefs = new ArrayList<Long>();
-
 	}
 
-	public void add(Page p) {
-		pages.add(p);
+	public void addPage(Page page) {
+		pages.add(page);
 	}
 
 	public void insertPage(int where, Page p) {
@@ -128,7 +127,6 @@ public class PDF {
 		writePDFbody();
 		writeXrefs();
 		writePDFTrailer();
-		out.flush();
 		out.close();
 	}
 

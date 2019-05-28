@@ -9,6 +9,9 @@ public class Page extends PDFDict {
 
 	public Page(PDF m) {
 		super(m);
+		// If we add the page ourselves, it'll be more reliable, but
+		// the user won't have the option to insert it arbitrarily.
+		// m.addPage(this);
 		dict.put("Type", "/Page");
 		dict.put("Parent", "4 0 R");
 		dict.put("Resources", "<< /Font << /F1 8 0 R >> /ProcSet 7 0 R >>");
