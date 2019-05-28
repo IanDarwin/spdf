@@ -1,3 +1,18 @@
 = SPDF -- simple PDF API (incomplete)
 
 A very trivial (so far) PDF generator API.
+
+This API allows you to create simple PDF documents containing text.
+
+As of now, the TODO list is probably longer than the features list.
+
+This was first created in 2000 as a quick demo as part of the Java Cookbook 'javasrc' repository;
+some of the git history still refers to other files that were committed at the same time.
+
+I have more recently decided to pull it out and make it its own repo, and make it
+a usable free library for generating PDF.
+
+I invite you to help me move this forward by sending pull requests that add functionality.
+
+But if not, feel free to use it as-is, if it meets your needs.
+
