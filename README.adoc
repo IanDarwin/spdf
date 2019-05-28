@@ -1,0 +1,3 @@
+= SPDF -- simple PDF API (incomplete)
+
+A very trivial (so far) PDF generator API.
