@@ -114,6 +114,10 @@ public class PDF {
 	protected void addXref() {
 		xrefs.add(Long.valueOf(offset));
 	}
+	
+	public void setAuthor(String au) {
+		infoObj.dict.put("Author", "(" + au + ")");
+	}
 
 	/** Write the entire output */
 	public void writePDF() {
@@ -214,10 +218,6 @@ public class PDF {
 			dict.put("Created", "(D:20000516010203)");
 		}
 	}
-	
-	public void setAuthor(String au) {
-		infoObj.dict.put("Author", "(" + au + ")");
-	}
 
 	class OutlinesObject extends PDFDict {
 		protected OutlinesObject(PDF m) {
@@ -230,7 +230,7 @@ public class PDF {
 		protected PagesObject(PDF m) {
 			super(m);
 			dict.put("Type", "/Pages");
-			dict.put("Count", "1");
+			dict.put("Count", "1");			// XXX !
 			dict.put("Kids", "[5 0 R]");
 		}
 	}
