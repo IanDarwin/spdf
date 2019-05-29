@@ -16,6 +16,29 @@ public abstract class PDFDict extends PDFObject {
 		super(m);
 	}
 
+	/**
+	 * Retrieve a single value from the dictionary
+	 * @param k The key
+	 * @return The value for K, as per the general contract of java.util.Map.get()
+	 */
+	public String get(String k) {
+		return dict.get(k);
+	}
+
+	/**
+	 * Associate a single value with a given key. The default implementation
+	 * throws UnsupportedOperationException as it is assumed that most
+	 * dictionaries are immutable, but this method is not marked final as
+	 * some dictionaries need to be mutable (e.g., the PagesObject's Count
+	 * value isn't known until we start writing the file).
+	 * @param k The key
+	 * @param v The value
+	 * @return The value, as per the general contract of java.util.Map.put()
+	 */
+	public String put(String k, String v) {
+		throw new UnsupportedOperationException("Immutable dictionary " + getClass().getSimpleName());
+	}
+
 	/** Write the object to the Output Writer. The default implementation
 	 * of this method in PDFDict just calls startObj, printDict, and endObj.
 	 */
