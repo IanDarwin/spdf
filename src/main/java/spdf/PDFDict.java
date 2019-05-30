@@ -10,10 +10,15 @@ public abstract class PDFDict extends PDFObject {
 	 * leading slash, since they always have it. Values can
 	 * be /names, (strings), or whatever.
 	 */
-	protected Map<String,String> dict = new HashMap<>();
+	protected final Map<String,String> dict = new HashMap<>();
 
-	PDFDict(PDF m) {
-		super(m);
+	/**
+	 * Construct a PDFDict. Since most dictionaries should be immutable,
+	 * the subclass constructor should initialize the contents of "dict".
+	 * @param p The PDF object for this application
+	 */
+	PDFDict(PDF p) {
+		super(p);
 	}
 
 	/**
